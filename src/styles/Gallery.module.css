@@ -1,0 +1,180 @@
+.container {
+  min-height: 100vh;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fefcff;
+}
+
+.main {
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.title {
+  margin: 0 0 2rem 0;
+  line-height: 1.15;
+  font-size: 2.5rem;
+  background: linear-gradient(to right, #ff6b6b, #ff9e7d, #ffd670);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.imageCard {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.imageCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.imageContainer {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.imageCard:hover .galleryImage {
+  transform: scale(1.05);
+}
+
+.imageInfo {
+  padding: 0.75rem;
+}
+
+.sender {
+  margin: 0;
+  font-weight: 500;
+}
+
+.noImages {
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.button {
+  background: linear-gradient(to right, #ff6b6b, #ff9e7d);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 1rem;
+  min-width: 200px;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.secondary {
+  background: #f2f2f2;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+/* Modal styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: white;
+  max-width: 80%;
+  max-height: 90%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.modalImage {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+.modalInfo {
+  padding: 1rem;
+}
+
+.modalSender {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.modalMessage {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  
+  .modalContent {
+    max-width: 95%;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+}
